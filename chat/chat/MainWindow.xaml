@@ -1,0 +1,39 @@
+﻿<Window x:Class="chat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chat"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+            <Label Content="Username:" VerticalAlignment="Center"/>
+            <TextBox x:Name="UsernameTextBox" Width="100" Margin="5"/>
+            <Button x:Name="ConnectButton" Content="Connect" Width="80" Margin="5" Click="ConnectButton_Click"/>
+            <Button x:Name="CreateButton" Content="Create" Width="80" Margin="5" Click="CreateButton_Click" IsEnabled="{Binding CanCreate}"/>
+        </StackPanel>
+        <ListBox x:Name="UsersListBox" Grid.Row="1" Margin="5" ItemsSource="{Binding Users}"/>
+        <StackPanel Grid.Row="2" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="5">
+            <TextBox x:Name="MessageTextBox" Width="400" Margin="5" KeyDown="MessageTextBox_KeyDown"/>
+            <TextBox x:Name="IpAddressTextBox" Width="100" Margin="5"/>
+            <TextBox x:Name="PortTextBox" Width="100" Margin="5"/>
+            <Button x:Name="SendButton" Content="Send" Width="80" Margin="5" Click="SendButton_Click" IsEnabled="{Binding CanSend}"/>
+            <Button x:Name="DisconnectButton" Content="Disconnect" Width="62" Margin="5" Click="DisconnectButton_Click" IsEnabled="{Binding CanDisconnect}"/>
+        </StackPanel>
+        <StackPanel x:Name="ChatStackPanel" Grid.Row="1" Margin="5" Grid.RowSpan="2">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <RichTextBox x:Name="ChatTextBox" IsReadOnly="True" VerticalScrollBarVisibility="Auto" BorderThickness="0">
+                    <FlowDocument>
+                        <Paragraph/>
+                    </FlowDocument>
+                </RichTextBox>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Window>

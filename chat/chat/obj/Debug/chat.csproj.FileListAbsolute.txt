@@ -1,0 +1,6 @@
+C:\Users\vortek\Documents\chat\chat\obj\Debug\chat.csproj.AssemblyReference.cache
+C:\Users\vortek\Documents\chat\chat\obj\Debug\chat.csproj.SuggestedBindingRedirects.cache
+C:\Users\vortek\Documents\chat\chat\obj\Debug\MainWindow.g.cs
+C:\Users\vortek\Documents\chat\chat\obj\Debug\App.g.cs
+C:\Users\vortek\Documents\chat\chat\obj\Debug\chat_MarkupCompile.cache
+C:\Users\vortek\Documents\chat\chat\obj\Debug\chat_MarkupCompile.lref
